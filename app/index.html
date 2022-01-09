@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="format-detection" content="telephone=0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="shortcut icon"  type="image/x-icon" href="return.png">
+   <link rel="stylesheet" href="css/style.min.css">
+   <title>Fruits</title>
+</head>
+<body>
+	<div class="preloader">
+		<!-- Элементы прелоадера -->
+		<div class="preloader-2">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+    </div>
+    <section>
+       <div class="bg"></div>
+       <header>
+          <a href="#" class="logo">Фрукты</a>
+          <div class="toggle"></div>
+          <ul class="navigation">
+             <li><a class="active" href="#">Главная</a></li>
+             <li><a href="#">Меню</a></li>
+             <li><a href="#">Новости</a></li>
+             <li><a href="#">Контакты</a></li>
+          </ul>
+         </header>
+         <div class="content">
+            <div class="textBox">
+               <h2>Свежие фрукты каждый день</h2>              
+               <p class="textBox_line" id="line">
+                  Фрукты питательны, вкусны. Они наделены приятной, освежающей сладостью. Да и польза фруктов для организма не вызывает сомнений. Солнечные дары природы отлично утоляют аппетит и жажду, повышают работоспособность, заряжают энергией и настроением. Польза фруктов для человека объясняется просто. Ведь в нежной мякоти сладких плодов растений содержится масса питательных биоактивных веществ, а также витаминов и минералов. Состав у каждого вида фруктов свой, разнообразный, уникальный. Но можно выделить общий список характерных свойств, за счёт которых обеспечивается польза фруктов для здоровья человека. 
+               </p>
+               <button class="btn" id ="butId">читать дальше</button>
+            </div>  
+            <div class="imgBox">
+               <img src="img/apple.webp" class="fruits">
+            </div>
+         </div>  
+         <ul class="thumb">
+            <li data-text="Яблоко" class="active"><img src="img/apple.webp" onclick="imgSlider('img/apple.webp');changeBgColor('#fc4a55')"></li>
+            <li data-text="Манго"><img src="img/mango.webp" onclick="imgSlider('img/mango.webp');changeBgColor('#ffcc02')"></li>
+            <li data-text="Ананас"><img src="img/pineApple.webp" onclick="imgSlider('img/pineApple.webp');changeBgColor('#fdab13')"></li>
+            <li data-text="Арбуз"><img src="img/watermelon.webp" onclick="imgSlider('img/watermelon.webp');changeBgColor('#92ba3c')"></li>
+            <li data-text="Питахайя"><img src="img/питахайя.webp" onclick="imgSlider('img/питахайя.webp');changeBgColor('#fb6cb2')"></li>
+         </ul> 
+         <ul class="sci">
+            <li><a href="#"><img src="img/facebook.webp" alt=""></a></li>
+            <li><a href="#"><img src="img/instagram.webp" alt=""></a></li>
+            <li><a href="#"><img src="img/twitter.webp" alt=""></a></li>
+         </ul>           
+                
+    </section>
+
+<script src="js/main.js"></script>
+<script>
+   let menuToggle = document.querySelector('.toggle');
+   let navigation = document.querySelector('.navigation');
+   menuToggle.onclick = function(){
+      menuToggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+   }
+
+   function imgSlider(anything) {
+      document.querySelector('.fruits').src = anything;
+   }
+
+   function changeBgColor(color) {
+      const bg = document.querySelector('.bg');
+      bg.style.background = color;
+   }
+
+
+   let el = document.querySelectorAll('.thumb li');
+   for (let i = 0; i < el.length; i++) {
+      el[i].onclick = function () {
+         var c = 0;
+         while (c < el.length) {
+            el[c++].className = 'check';
+         }
+         el[i].className = 'check active';
+      }
+   }
+</script>
+
+
+</body>
+
+</html>
